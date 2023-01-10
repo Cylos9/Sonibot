@@ -1,0 +1,14 @@
+<launch>
+  <arg name="rvizconfig" default="$(find sonibot_description)/rviz/sonibot_base_gazebo.rviz" />
+
+<!-- Launch sonibot in Gazebo  -->
+  <include file="$(find sonibot_description)/launch/sonibot_base_gazebo.launch">
+    <arg name="x_pos" value="-3.0"/>
+    <arg name="y_pos" value="1.0"/>
+    <arg name="z_pos" value="0.0"/>
+  </include>
+  <!-- Launch visualization in rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)"/>
+</launch>
+
+
